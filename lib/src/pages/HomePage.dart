@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:listacomponents/src/providers/menu_provider.dart';
+import 'package:listacomponents/src/utils/icono_string_util.dart';
  
 class HomePage extends StatelessWidget {
 
@@ -20,8 +21,8 @@ class HomePage extends StatelessWidget {
     return FutureBuilder(
       future: menuProvider.cargarData(),
       // initial data la informacion por defecto mientras el future no haya sido resuelto     
-      initialData: [],
-      builder: ( BuildContext context, AsyncSnapshot<List<dynamic>> snapshot){
+      //initialData: [],
+      builder: ( context, AsyncSnapshot<List<dynamic>> snapshot){
 
         return ListView(
           children: _listaItems(snapshot.data),
@@ -37,10 +38,12 @@ class HomePage extends StatelessWidget {
     data.forEach((opt){
      
       final widgetTempt = ListTile(
-        title: Text( opt ['text'] ),
-        leading: Icon(Icons.account_circle, color: Colors.blue),
+        title:  Text( opt ['texto'] ),
+        leading: getIcon( opt['icon']),
         trailing: Icon(Icons.keyboard_arrow_right, color: Colors.blue),
         onTap: (){
+          Navigator.push(context, route);
+          
         },
       );
 
