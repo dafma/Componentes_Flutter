@@ -18,7 +18,14 @@ class MyApp extends StatelessWidget {
         '/'      : ( BuildContext context ) => HomePage(),
         'alert'  : (BuildContext context  ) => AlertPage(),
         'avatar' : ( BuildContext context ) => AvatarPage(),
-      }
+      },
+      onGenerateRoute: ( RouteSettings settings){
+          print("Ruta llamada: ${ settings.name }");
+
+          return MaterialPageRoute(
+            builder: ( BuildContext context ) => AlertPage(), 
+          );
+      },
     );
   }
 }
