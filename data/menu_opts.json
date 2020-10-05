@@ -12,6 +12,11 @@
             "texto": "Avatars"
         },
         {
+            "ruta" : "draggable",
+            "icon" : "folder_open",
+            "texto": "Draggable Scroll Bar"
+        },
+        {
             "ruta" : "card",
             "icon" : "folder_open",
             "texto": "Cards - Tarjetas"
